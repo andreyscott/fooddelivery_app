@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
     // then navigate to home page
 
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => const HomePage()));
   }
 
   @override
