@@ -4,6 +4,7 @@ import 'package:fooddelivery_app/components/description_box.dart';
 import 'package:fooddelivery_app/components/drawer.dart';
 import 'package:fooddelivery_app/components/silver_app.dart';
 import 'package:fooddelivery_app/components/tab_bar.dart';
+import 'package:fooddelivery_app/models/food.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController =
+        TabController(length: FoodCategory.values.length, vsync: this);
   }
 
   @override
