@@ -28,7 +28,7 @@ class Settings extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Data Mode",
+                "Data Moder",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.inversePrimary),
