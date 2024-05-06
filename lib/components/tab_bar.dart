@@ -16,9 +16,14 @@ class MyTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: TabBar(
-        controller: tabController,
-        tabs: _buildCategoryTabs(),
+      child: SingleChildScrollView(
+        child: TabBar(
+          controller: tabController,
+          tabs: _buildCategoryTabs(),
+          labelStyle: TextStyle(
+            fontSize: 9,
+          ),
+        ),
       ),
     );
   }
