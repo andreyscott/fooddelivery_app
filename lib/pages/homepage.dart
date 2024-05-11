@@ -91,8 +91,8 @@ class _HomePageState extends State<HomePage>
         body: Consumer<Restaurant>(
           builder: (context, restaurant, child) => TabBarView(
             controller: _tabController,
-            children: getFoodInThisCategory(restaurant.menu),
             physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
+            children: getFoodInThisCategory(restaurant.menu),
           ),
         ),
       ),

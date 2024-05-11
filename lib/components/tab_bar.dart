@@ -20,7 +20,7 @@ class MyTabBar extends StatelessWidget {
         child: TabBar(
           controller: tabController,
           tabs: _buildCategoryTabs(),
-          labelStyle: TextStyle(
+          labelStyle: const TextStyle(
             fontSize: 9,
           ),
         ),

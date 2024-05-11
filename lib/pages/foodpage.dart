@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fooddelivery_app/components/buttons.dart';
 import 'package:fooddelivery_app/models/food.dart';
 import 'package:fooddelivery_app/models/restaurant.dart';
+import 'package:fooddelivery_app/pages/cart_page.dart';
 import 'package:provider/provider.dart';
 
 class FoodPage extends StatefulWidget {
@@ -137,7 +138,13 @@ class _FoodPageState extends State<FoodPage> {
 
                 //add to cart button
                 MyButton(
-                  onTap: () => addToCart(widget.food, widget.selectedAddons),
+                  onTap: () {
+                    addToCart(widget.food, widget.selectedAddons);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CartPage()));
+                  },
                   text: 'Add to Cart',
                 ),
                 const SizedBox(height: 25),
