@@ -62,7 +62,6 @@ class MyCartTile extends StatelessWidget {
                       const Spacer(),
 
                       MyQuantitySelector(
-                        // MyQuantitySelector
                         quantity: cartItem.quantity,
                         food: cartItem.food,
                         onIncrement: () {
@@ -78,7 +77,9 @@ class MyCartTile extends StatelessWidget {
                 ),
                 //const SizedBox(height: 10),
                 //divider
-                //Divider(color: Theme.of(context).colorScheme.secondary,),
+                Divider(
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 //addons
                 SizedBox(
                   height: cartItem.selectedAddons.isEmpty ? 0 : 60,

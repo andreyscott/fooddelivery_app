@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fooddelivery_app/components/buttons.dart';
 import 'package:fooddelivery_app/components/mycart_tile.dart';
 import 'package:fooddelivery_app/models/restaurant.dart';
+import 'package:fooddelivery_app/pages/payment.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
@@ -87,8 +88,10 @@ class CartPage extends StatelessWidget {
             //buton to pay
             MyButton(
               onTap: () {
-                // Navigator.push(context,
-                // MaterialPageRoute(builder: (context) => const PaymentPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PaymentPage()));
               },
               text: 'Go to Payment',
             ),

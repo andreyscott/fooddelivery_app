@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:fooddelivery_app/components/buttons.dart';
 import 'package:fooddelivery_app/components/text_field.dart';
 import 'package:fooddelivery_app/pages/homepage.dart';
+import 'package:fooddelivery_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -17,13 +20,21 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   // login
-  void login() {
-    // fill out authentication here
+  void login() async {
+    final authService = AuthService();
 
-    // then navigate to home page
-
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+    try {
+      await authService.signInWithEmailAndPassword(
+          emailController.text, passwordController.text);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
+    } catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text(e.toString()),
+              ));
+    }
   }
 
   @override
@@ -62,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
           MyTextField(
               controller: passwordController,
               hintText: "Password",
-              obscureText: false),
+              obscureText: true),
           const SizedBox(
             height: 12,
           ),

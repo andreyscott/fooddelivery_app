@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage>
                 ),
 
                 // my current location
-                const MyCurrentLocation(), const MyDescriptionBox()
+                MyCurrentLocation(), const MyDescriptionBox()
               ],
             ),
           ),
